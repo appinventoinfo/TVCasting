@@ -1,32 +1,20 @@
 /* 
  * ScreenShare: Cast to TV - Custom Styled Media Receiver Design
- * Using WebP for fast image loading
+ * Host this CSS file at an HTTPS URL and reference it in the Google Cast SDK Developer Console
  */
 
-/* ===== CORE STYLES ===== */
-
-/* Main Background */
+/* Main Background - Clean dark theme for TV viewing */
 .background {
   background: linear-gradient(135deg, #0a1929 0%, #1a365d 100%) !important;
   background-color: #0a1929 !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
   animation: gradientShift 15s ease infinite !important;
   background-size: 400% 400% !important;
 }
 
-/* ===== LOGO SECTION ===== */
-
-/* Logo Container */
-.logo-container {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  text-align: center !important;
-  width: 100% !important;
-  animation: logoStay 10s forwards !important;
-}
-
-/* Logo Image */
+/* App Logo - Displayed during launch (4 seconds total) */
 .logo {
   background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.webp') !important;
   background-size: contain !important;
@@ -34,104 +22,81 @@
   background-position: center !important;
   width: 240px !important;
   height: 240px !important;
-  margin: 0 auto 30px auto !important;
-  animation: logoPulse 2s ease-in-out infinite !important;
-  opacity: 0 !important;
+  margin: 0 auto 20px auto !important; /* Space for text below */
   animation: 
-    fadeInLogo 0.8s ease 0.3s forwards,
-    logoPulse 2s ease-in-out infinite 1.1s !important;
+    logoPulse 2s ease-in-out infinite,
+    logoStay 4s forwards !important;
+  position: relative !important;
 }
 
 /* App Name Below Logo */
-.logo-text {
+.logo::after {
+  content: "ScreenShare: Cast to TV" !important;
   display: block !important;
   color: #ffffff !important;
   font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-  font-size: 36px !important;
+  font-size: 32px !important;
   font-weight: 500 !important;
   text-align: center !important;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8) !important;
-  letter-spacing: 2px !important;
+  letter-spacing: 1.5px !important;
   margin-top: 10px !important;
-  opacity: 0 !important;
-  animation: fadeInUp 1s ease 1.5s forwards !important;
   white-space: nowrap !important;
 }
 
-.logo-text::before {
-  content: "ScreenShare: Cast to TV" !important;
-}
-
-/* ===== SPLASH SCREEN (READY TO CAST) ===== */
-
+/* Splash Screen - Different display for idle state */
 .splash {
   background: radial-gradient(circle at center, #1a365d 0%, #0a1929 100%) !important;
   background-image: 
     radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%) !important;
-  animation: splashFadeIn 1s ease-out forwards !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
-/* Center Container for Splash Content */
-.splash-center {
+/* App Name in Middle of TV (in splash screen) */
+.splash::before {
+  content: "ScreenShare: Cast to TV" !important;
   position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  text-align: center !important;
-  width: 100% !important;
-}
-
-/* App Name in Middle of TV */
-.splash-app-name {
-  display: block !important;
+  top: 45% !important; /* Position in middle */
+  left: 0 !important;
+  right: 0 !important;
   color: #ffffff !important;
   font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-  font-size: 42px !important;
+  font-size: 36px !important;
   font-weight: 600 !important;
   text-align: center !important;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9) !important;
-  letter-spacing: 2.5px !important;
-  margin-bottom: 60px !important;
-  opacity: 0 !important;
-  animation: fadeInUp 1.2s ease 0.5s forwards !important;
-}
-
-.splash-app-name::before {
-  content: "ScreenShare: Cast to TV" !important;
+  letter-spacing: 2px !important;
 }
 
 /* Ready to Cast Text */
-.splash-ready-text {
-  display: block !important;
+.splash::after {
+  content: "Ready to Cast" !important;
+  position: absolute !important;
+  top: 55% !important; /* Below the app name */
+  left: 0 !important;
+  right: 0 !important;
   color: #e2e8f0 !important;
   font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-  font-size: 32px !important;
+  font-size: 28px !important;
   font-weight: 300 !important;
   text-align: center !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
-  letter-spacing: 1.5px !important;
-  opacity: 0 !important;
-  animation: fadeInUp 1.2s ease 1s forwards !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  letter-spacing: 1px !important;
 }
 
-.splash-ready-text::before {
-  content: "Ready to Cast" !important;
-}
-
-/* ===== PLAYBACK CONTROLS ===== */
-
-/* Progress Bar */
+/* Progress Bar - Modern styling for playback */
 .progressBar {
-  background-color: #38bdf8 !important;
+  background-color: #38bdf8 !important; /* Primary blue color */
   height: 4px !important;
   border-radius: 2px !important;
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.5) !important;
 }
 
-/* Watermark */
+/* Watermark - Subtle branding during playback */
 .watermark {
-  background-image: url('https://appinventoinfo.github.io/TVCasting/watermark.png') !important;
+  background-image: url('https://appinventoinfo.github.io/TVCasting/watermark.webp') !important;
   background-size: 48px 48px !important;
   background-repeat: no-repeat !important;
   background-position: bottom right !important;
@@ -143,88 +108,27 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
 }
 
-/* ===== TEXT STYLES ===== */
-
-.playerTitle, .playerSubtitle {
-  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
-}
-
-.playerTitle {
-  color: #ffffff !important;
-  font-weight: 600 !important;
-}
-
-.playerSubtitle {
-  color: #cbd5e1 !important;
-  font-weight: 400 !important;
-}
-
-/* ===== LAYOUT ===== */
-
-/* TV Safe Area */
-.cast-media-player {
-  margin: 5% !important;
-}
-
-/* Loading Spinner */
-.spinner {
-  border: 3px solid rgba(56, 189, 248, 0.3) !important;
-  border-top: 3px solid #38bdf8 !important;
-  border-radius: 50% !important;
-  animation: spin 1s linear infinite !important;
-}
-
-/* ===== ANIMATIONS ===== */
-
-@keyframes logoStay {
-  0%, 85% {
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  100% {
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-}
-
-@keyframes fadeInLogo {
-  0% {
-    opacity: 0 !important;
-    transform: scale(0.9) !important;
-  }
-  100% {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-  }
-}
-
+/* Animations */
 @keyframes logoPulse {
   0%, 100% {
     transform: scale(1) !important;
+    opacity: 1 !important;
   }
   50% {
     transform: scale(1.05) !important;
+    opacity: 0.9 !important;
   }
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0 !important;
-    transform: translateY(20px) !important;
-  }
-  100% {
+/* Logo timing: 4 seconds total, fades out last 0.5 seconds */
+@keyframes logoStay {
+  0%, 87.5% { /* 3.5 seconds visible (87.5% of 4s) */
     opacity: 1 !important;
-    transform: translateY(0) !important;
+    visibility: visible !important;
   }
-}
-
-@keyframes splashFadeIn {
-  0% {
+  100% { /* Last 0.5 seconds fade out */
     opacity: 0 !important;
-  }
-  100% {
-    opacity: 1 !important;
+    visibility: hidden !important;
   }
 }
 
@@ -240,14 +144,41 @@
   }
 }
 
+/* Metadata text styling for media info */
+.playerTitle, .playerSubtitle {
+  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.playerTitle {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.playerSubtitle {
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+}
+
+/* Overscan safety margin for TV displays */
+.cast-media-player {
+  margin: 5% !important; /* Prevents content from being clipped on TV edges */
+}
+
+/* Buffering spinner customization */
+.spinner {
+  border: 3px solid rgba(56, 189, 248, 0.3) !important;
+  border-top: 3px solid #38bdf8 !important;
+  border-radius: 50% !important;
+  animation: spin 1s linear infinite !important;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg) !important; }
   100% { transform: rotate(360deg) !important; }
 }
 
-/* ===== FALLBACKS ===== */
-
-/* If watermark doesn't load */
+/* If watermark.png doesn't exist, show text fallback */
 .watermark:empty {
   background-image: none !important;
 }
@@ -264,46 +195,12 @@
   letter-spacing: 1px !important;
 }
 
-/* ===== RESPONSIVE ===== */
-
-@media (max-height: 600px) {
+/* Fallback for PNG if WebP not available */
+@supports not (background-image: url('test.webp')) {
   .logo {
-    width: 180px !important;
-    height: 180px !important;
-    margin-bottom: 20px !important;
+    background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.png') !important;
   }
-  
-  .logo-text,
-  .splash-app-name {
-    font-size: 28px !important;
-  }
-  
-  .splash-ready-text {
-    font-size: 24px !important;
-  }
-  
-  .splash-app-name {
-    margin-bottom: 40px !important;
+  .watermark {
+    background-image: url('https://appinventoinfo.github.io/TVCasting/watermark.png') !important;
   }
 }
-
-@media (max-width: 800px) {
-  .logo-text,
-  .splash-app-name {
-    font-size: 32px !important;
-    letter-spacing: 1.5px !important;
-  }
-  
-  .splash-ready-text {
-    font-size: 26px !important;
-  }
-}
-
-/* ===== DEBUG HELPERS ===== */
-
-/* Uncomment to see element boundaries */
-/*
-* {
-  outline: 1px solid rgba(255, 0, 0, 0.1) !important;
-}
-*/
