@@ -1,140 +1,54 @@
-/* =====================================================
-   ScreenShare: Cast to TV
-   Google Cast STYLED Media Receiver (CORRECTED)
-   ===================================================== */
+/* 
+ * ScreenShare: Cast to TV - Minimal Google Cast CSS
+ */
 
-/* ---------- Background ---------- */
+/* Background */
 .background {
   background: linear-gradient(135deg, #0a1929 0%, #1a365d 100%) !important;
+  background-color: #0a1929 !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center !important;
 }
 
-/* ---------- Splash ---------- */
-.splash {
-  width: 100% !important;
-  height: 100% !important;
-  background: radial-gradient(circle at center, #1a365d 0%, #0a1929 100%) !important;
-}
-
-.splashTitle {
-  content: "ScreenShare: Cast to TV" !important;
-  position: absolute !important;
-  bottom: 180px !important;
-  left: 0 !important;
-  right: 0 !important;
-  color: #ffffff !important;
-  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-  font-size: 36px !important;
-  font-weight: 500 !important;
-  text-align: center !important;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8) !important;
-  letter-spacing: 2px !important;
-  opacity: 1 !important; /* Changed from 0 to 1 */
-}
-
-.splashSubtitle {
-  content: "Ready to Cast" !important;
-  position: absolute !important;
-  bottom: 120px !important;
-  left: 0 !important;
-  right: 0 !important;
-  color: #e2e8f0 !important;
-  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-  font-size: 28px !important;
-  font-weight: 300 !important;
-  text-align: center !important;
-  letter-spacing: 1px !important;
-  opacity: 1 !important; /* Changed from 0 to 1 */
-}
-/* ---------- Logo (MUST stay visible) ---------- */
+/* Logo */
 .logo {
-  background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.png') !important;
+    background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.png') !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  width: 220px !important;
-  height: 220px !important;
+  width: 240px !important;
+  height: 240px !important;
   margin: 0 auto !important;
-  opacity: 1 !important;
 }
 
-/* WebP override */
-@supports (background-image: url("data:image/webp;base64,UklGRiIAAABXRUJQVlA4")) {
-  .logo {
-    background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.webp') !important;
-  }
-}
-
-/* ---------- Logo Text (STATIC) ---------- */
-.logoText {
-   content: "ScreenShare: Cast to TV" !important;
-  position: absolute !important;
-  top: 260px !important;
-  left: 0 !important;
-  right: 0 !important;
-  text-align: center !important;
-  color: #e2e8f0 !important;
-  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-  font-size: 32px !important;
-  font-weight: 400 !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
-  letter-spacing: 1.5px !important;
-  opacity: 1 !important;
-}
-
-/* ---------- Progress Bar ---------- */
+/* Progress Bar */
 .progressBar {
-  background-color: #38bdf8 !important;
+  background-color: rgb(238, 255, 65) !important;
   height: 4px !important;
   border-radius: 2px !important;
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5) !important;
 }
 
-/* ---------- Watermark ---------- */
+/* Splash Screen */
+.splash {
+  background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.png') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Watermark */
 .watermark {
+  background-image: url('https://appinventoinfo.github.io/TVCasting/watermark.png') !important;
+  background-size: 57px 57px !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom right !important;
   position: absolute !important;
   bottom: 20px !important;
   right: 20px !important;
-  width: 48px !important;
-  height: 48px !important;
-  background-image: url('https://appinventoinfo.github.io/TVCasting/watermark.png') !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  opacity: 0.65 !important;
-}
-
-/* ---------- Player Metadata ---------- */
-.playerTitle,
-.playerSubtitle {
-  font-family: system-ui, sans-serif !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.7) !important;
-}
-
-.playerTitle {
-  color: #ffffff !important;
-  font-weight: 600 !important;
-}
-
-.playerSubtitle {
-  color: #cbd5e1 !important;
-}
-
-/* ---------- Overscan ---------- */
-.cast-media-player {
-  margin: 2% !important;
-}
-
-/* ---------- Spinner ---------- */
-.spinner {
-  border: 3px solid rgba(56, 189, 248, 0.3) !important;
-  border-top: 3px solid #38bdf8 !important;
-  border-radius: 50% !important;
-  animation: spin 1s linear infinite !important;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  width: 57px !important;
+  height: 57px !important;
+  opacity: 0.8 !important;
 }
