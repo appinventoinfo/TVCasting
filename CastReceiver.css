@@ -10,11 +10,13 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center !important;
+  animation: gradientShift 15s ease infinite !important;
+  background-size: 400% 400% !important;
 }
 
 /* App Logo - Displayed during launch and idle state */
 .logo {
-  background-image: url('https://play-lh.googleusercontent.com/eTrApPAhEy8BGVw9lT9UFE6yXCdKqLEivvXbLzIsIk14suY2gP3SM3hFahnzKb2BRpOZ0IRSfPuaoatgxLVSbA=w240-h480-rw') !important;
+  background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.png') !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -59,7 +61,7 @@
 
 /* Watermark - Subtle branding during playback */
 .watermark {
-  background-image: url('https://play-lh.googleusercontent.com/eTrApPAhEy8BGVw9lT9UFE6yXCdKqLEivvXbLzIsIk14suY2gP3SM3hFahnzKb2BRpOZ0IRSfPuaoatgxLVSbA=w240-h480-rw') !important;
+  background-image: url('https://appinventoinfo.github.io/TVCasting/watermark.png') !important;
   background-size: 48px 48px !important;
   background-repeat: no-repeat !important;
   background-position: bottom right !important;
@@ -113,7 +115,7 @@
 
 /* Overscan safety margin for TV displays */
 .cast-media-player {
-  margin: 5% !important; /* Prevents content from being clipped on TV edges [citation:2] */
+  margin: 5% !important; /* Prevents content from being clipped on TV edges */
 }
 
 /* Buffering spinner customization */
@@ -127,4 +129,21 @@
 @keyframes spin {
   0% { transform: rotate(0deg) !important; }
   100% { transform: rotate(360deg) !important; }
+}
+
+/* If watermark.png doesn't exist, show text fallback */
+.watermark:empty {
+  background-image: none !important;
+}
+
+.watermark:empty::after {
+  content: "ScreenShare" !important;
+  position: absolute !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px !important;
 }
