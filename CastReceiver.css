@@ -1,6 +1,6 @@
 /* =====================================================
    ScreenShare: Cast to TV
-   Google Cast Custom Styled Media Receiver (SAFE VERSION)
+   Google Cast STYLED Media Receiver (CORRECTED)
    ===================================================== */
 
 /* ---------- Background ---------- */
@@ -11,15 +11,44 @@
   background-position: center !important;
 }
 
-/* ---------- Splash Screen ---------- */
+/* ---------- Splash ---------- */
 .splash {
-  position: relative !important;
   width: 100% !important;
   height: 100% !important;
   background: radial-gradient(circle at center, #1a365d 0%, #0a1929 100%) !important;
 }
 
-/* ---------- Logo ---------- */
+.splashTitle {
+  content: "ScreenShare: Cast to TV" !important;
+  position: absolute !important;
+  bottom: 180px !important;
+  left: 0 !important;
+  right: 0 !important;
+  color: #ffffff !important;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
+  font-size: 36px !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: 2px !important;
+  opacity: 1 !important; /* Changed from 0 to 1 */
+}
+
+.splashSubtitle {
+  content: "Ready to Cast" !important;
+  position: absolute !important;
+  bottom: 120px !important;
+  left: 0 !important;
+  right: 0 !important;
+  color: #e2e8f0 !important;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 300 !important;
+  text-align: center !important;
+  letter-spacing: 1px !important;
+  opacity: 1 !important; /* Changed from 0 to 1 */
+}
+/* ---------- Logo (MUST stay visible) ---------- */
 .logo {
   background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.png') !important;
   background-size: contain !important;
@@ -28,55 +57,31 @@
   width: 220px !important;
   height: 220px !important;
   margin: 0 auto !important;
-  animation: logoIntro 4s ease forwards !important;
+  opacity: 1 !important;
 }
 
-/* WebP override (safe) */
+/* WebP override */
 @supports (background-image: url("data:image/webp;base64,UklGRiIAAABXRUJQVlA4")) {
   .logo {
     background-image: url('https://appinventoinfo.github.io/TVCasting/Icon.webp') !important;
   }
 }
 
-/* ---------- Logo Text ---------- */
+/* ---------- Logo Text (STATIC) ---------- */
 .logoText {
-  margin-top: 14px !important;
-  text-align: center !important;
-  font-family: system-ui, sans-serif !important;
-  font-size: 30px !important;
-  font-weight: 500 !important;
-  color: #ffffff !important;
-  letter-spacing: 1.4px !important;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8) !important;
-  animation: textFade 4s ease forwards !important;
-}
-
-/* ---------- Splash Center Text ---------- */
-.splashTitle {
+   content: "ScreenShare: Cast to TV" !important;
   position: absolute !important;
-  top: 45% !important;
+  top: 260px !important;
   left: 0 !important;
   right: 0 !important;
   text-align: center !important;
-  font-family: system-ui, sans-serif !important;
-  font-size: 36px !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
-  letter-spacing: 2px !important;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9) !important;
-}
-
-.splashSubtitle {
-  position: absolute !important;
-  top: 55% !important;
-  left: 0 !important;
-  right: 0 !important;
-  text-align: center !important;
-  font-family: system-ui, sans-serif !important;
-  font-size: 26px !important;
-  font-weight: 300 !important;
   color: #e2e8f0 !important;
-  letter-spacing: 1px !important;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
+  letter-spacing: 1.5px !important;
+  opacity: 1 !important;
 }
 
 /* ---------- Progress Bar ---------- */
@@ -98,7 +103,6 @@
   background-size: contain !important;
   background-repeat: no-repeat !important;
   opacity: 0.65 !important;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) !important;
 }
 
 /* ---------- Player Metadata ---------- */
@@ -115,10 +119,9 @@
 
 .playerSubtitle {
   color: #cbd5e1 !important;
-  font-weight: 400 !important;
 }
 
-/* ---------- Overscan Safety ---------- */
+/* ---------- Overscan ---------- */
 .cast-media-player {
   margin: 2% !important;
 }
@@ -131,36 +134,7 @@
   animation: spin 1s linear infinite !important;
 }
 
-/* ---------- Animations ---------- */
-@keyframes logoIntro {
-  0% {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes textFade {
-  0%, 85% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
